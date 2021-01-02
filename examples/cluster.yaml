@@ -1,0 +1,25 @@
+static_resources:
+  clusters:
+  - name: test_cluster
+    connect_timeout: 0.25s
+    type: STATIC
+    lb_policy: ROUND_ROBIN
+    load_assignment:
+      cluster_name: test_cluster
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: 127.0.0.1
+                port_value: 1234
+        - endpoint:
+            address:
+              socket_address:
+                address: 127.0.0.2
+                port_value: 1234
+        - endpoint:
+            address:
+              socket_address:
+                address: 127.0.0.3
+                port_value: 1234
